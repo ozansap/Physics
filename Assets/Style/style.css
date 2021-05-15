@@ -1,0 +1,182 @@
+@font-face {
+  font-family: 'Roboto';
+	src: url('../Fonts/Roboto-Regular.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-Medium';
+	src: url('../Fonts/Roboto-Medium.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-Light';
+	src: url('../Fonts/Roboto-Light.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-Thin';
+	src: url('../Fonts/Roboto-Thin.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-Bold';
+	src: url('../Fonts/Roboto-Bold.ttf');
+}
+
+@font-face {
+  font-family: 'Roboto-Black';
+	src: url('../Fonts/Roboto-Black.ttf');
+}
+
+* {
+	padding: 0;
+	margin: 0;
+	box-sizing: border-box;
+}
+
+body * {
+	display: flex;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+	-webkit-user-drag: none;
+	-moz-user-drag: none;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+body {
+	position: absolute;
+	display: block;
+	overflow: hidden;
+	width: 100%;
+	height: 100%;
+}
+
+canvas {
+	position: absolute;
+	display: block;
+	z-index: -1;
+}
+
+.button {
+	border: 3px solid;
+	border-color:  rgba(255, 255, 250, 0);
+	border-radius: 30%;
+	transition: 0.3s;
+}
+
+.topButtons {
+	margin: 15px 15px 0 15px;
+	justify-content: flex-end;
+}
+
+.topButtons > * {
+	align-items: center;
+	justify-content: center;
+	width: 50px;
+	height: 50px;
+}
+
+.topButtons > * > img {
+	width: 30px;
+	height: 30px;
+}
+
+.button:focus, .button:hover {
+	border-color:  rgba(255, 255, 255, 1);
+}
+
+.menu {
+	display: none;
+	background-color: rgba(0, 0, 0, 0.3);
+	flex-direction: row;
+	flex-wrap: wrap;
+	width: 300px;
+	padding: 10px;
+	position: absolute;
+	top: 10%;
+	right: 5%;
+}
+
+.menu > p {
+	width: fit-content;
+	font: 24px Roboto-Bold;
+	color: white;
+	margin: 0 0 10px 0;
+}
+
+.menu > .closeButton {
+	margin-left: auto;
+	margin-top: -8px;
+	margin-right: -8px;
+	height: 30px;
+	width: 30px;
+}
+
+.menu > .closeButton > img {
+	width: 100%;
+}
+
+.menuSection {
+	width: 100%;
+	margin-top: 10px;
+}
+
+.menuSection > p {
+	font: 20px Roboto;
+	height: fit-content;
+	color: white;
+	margin-right: auto;
+	align-self: flex-end;
+}
+
+.menuSection > input[type=number] {
+	background-color: rgba(0, 0, 0, 0.3);
+	border: none;
+	width: 100px;
+	font: 14px Roboto;
+	color: white;
+	text-align: right;
+	padding-right: 5px;
+}
+
+.menuSection > select {
+	background-color: rgba(0, 0, 0, 0.3);
+	border: none;
+	width: 100px;
+	font: 14px Roboto;
+	color: white;
+}
+
+.menuSection > input[type=color] {
+	background: none;
+	border: none;
+	width: 50px;
+}
+
+.menuSection + .spacer {
+	height: 50%;
+}
+
+.checkbox {
+	left: 50%;
+	width: 25px;
+	height: 25px;
+	background: url("../Icons/false.png") no-repeat center;
+	background-size: 100%;
+}
+
+.checked {
+	background: url("../Icons/true.png") no-repeat center;
+	background-size: 100%;
+}
+

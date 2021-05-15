@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<head>
+	<title>Physics</title>
+	<meta charset="UTF-8">
+	<link rel="stylesheet" href="Assets/Style/style.css">
+	<link rel="icon" href="Assets/Icons/icon.png">
+</head>
+<body oncontextmenu="return false;">
+	<canvas id="canvas"></canvas>
+	<div class="topButtons">
+		<div id="searchButton" class="menuButton button">
+			<img src="Assets/Icons/search.png"></img>
+		</div>
+		<div id="pauseButton" class="button">
+			<img id="pauseButtonImg" src="Assets/Icons/pause.png"></img>
+			<img id="playButtonImg" src="Assets/Icons/play.png" style="display: none;"></img>
+		</div>
+		<div id="helpButton" class="menuButton button">
+			<img src="Assets/Icons/help.png"></img>
+		</div>
+		<div id="saveButton" class="menuButton button">
+			<img src="Assets/Icons/save.png"></img>
+		</div>
+		<div id="addButton" class="menuButton button">
+			<img src="Assets/Icons/add.png"></img>
+		</div>
+		<div id="tuneWorldButton" class="menuButton button">
+			<img src="Assets/Icons/tune.png"></img>
+		</div>
+		<div id="settingsButton" class="menuButton button">
+			<img src="Assets/Icons/settings.png"></img>
+		</div>
+	</div>
+	<div id="tuneWorldMenu" class="menu">
+		<p>World</p>
+		<div class="closeButton button">
+			<img src="Assets/Icons/close.png"></img>
+		</div>
+		<div class="menuSection">
+			<p title="Frames per Second&#10;default: 60">FPS</p>
+			<input type="number" id="fps" name="fps">
+		</div>
+		<div class="menuSection">
+			<p title="Physics calculations per second&#10;Slower numbers may cause problems&#10;default: 120">PPS</p>
+			<input type="number" id="pps" name="pps">
+		</div>
+		<div class="menuSection spacer"></div>
+		<div class="menuSection">
+			<p title="Speed of time&#10;default: 1">Time Scale</p>
+			<input type="number" id="timeScale" name="timeScale">
+		</div>
+		<div class="menuSection">
+			<p title="Downwards force applied on all objects&#10;default: 2000">Gravity</p>
+			<input type="number" id="gravity" name="gravity">
+		</div>
+		<div class="menuSection">
+			<p title="Slowing force applied on all objects&#10;default: 5">Drag</p>
+			<input type="number" id="drag" name="drag">
+		</div>
+		<div class="menuSection">
+			<p title="How the edged of the screen behave&#10;default: Border">Edge Mode</p>
+			<select name="edge" id="edge">
+				<option value="border">Border</option>
+				<option value="wrap">Wrap</option>
+				<option value="empty">Empty</option>
+			</select>
+		</div>
+	</div>
+	<div id="tuneCircleMenu" class="menu">
+		<p>Properties of </p>
+		<div class="closeButton button">
+			<img src="Assets/Icons/close.png"></img>
+		</div>
+		<div class="menuSection">
+			<p title="Color of the object">Color</p>
+			<input type="color" id="color" name="color">
+		</div>
+		<div class="menuSection">
+			<p title="Should the object be drawn on the world&#10;default: true">Visible</p>
+			<div class="checkbox" id="visible" name="visible"></div>
+		</div>
+		<div class="menuSection spacer"></div>
+		<div class="menuSection">
+			<p title="Should the object be affected by physics&#10;default: true">Active</p>
+			<div class="checkbox" id="active" name="active"></div>
+		</div>
+		<div class="menuSection">
+			<p title="Should the object collide with other objects&#10;default: true">Collider</p>	
+			<div class="checkbox" id="collider" name="collider"></div>
+		</div>
+		<div class="menuSection">
+			<p title="Mass of the object&#10;default: 10">Mass</p>
+			<input type="number" id="mass" name="mass">
+		</div>
+		<div class="menuSection">
+			<p title="How much momentum is preserved after a collision&#10;1 = elastic&#10;default: 0.8">Bounciness</p>
+			<input type="number" id="bounciness" name="bounciness">
+		</div>
+		<div class="menuSection">
+			<p title="Radius of the circle&#10;default: 20">Radius</p>
+			<input type="number" id="radius" name="radius">
+		</div>
+	</div>
+	<div id="tuneSpringMenu" class="menu">
+		<p>Properties of </p>
+		<div class="closeButton button">
+			<img src="Assets/Icons/close.png"></img>
+		</div>
+		<div class="menuSection">
+			<p title="Color of the spring while pushing objects">Pushing Color</p>
+			<input type="color" id="colorPushing" name="colorPushing">
+		</div>
+		<div class="menuSection">
+			<p title="Color of the spring while pulling objects">Pulling Color</p>
+			<input type="color" id="colorPulling" name="colorPulling">
+		</div>
+		<div class="menuSection">
+			<p title="Should the object be drawn on the world&#10;default: true">Visible</p>
+			<div class="checkbox" id="visible" name="visible"></div>
+		</div>
+		<div class="menuSection">
+			<p title="Width of the spring, visual only&#10;default: 3">Width</p>
+			<input type="number" id="width" name="width">
+		</div>
+		<div class="menuSection spacer"></div>
+		<div class="menuSection">
+			<p title="Should the object be affected by physics&#10;default: true">Active</p>
+			<div class="checkbox" id="active" name="active"></div>
+		</div>
+		<div class="menuSection">
+			<p title="Resting length of the spring&#10;default: 50">Resting Length</p>
+			<input type="number" id="length" name="length">
+		</div>
+		<div class="menuSection">
+			<p title="Strength of the spring&#10;default: 10000">Stiffness</p>
+			<input type="number" id="stiffness" name="stiffness">
+		</div>
+		<div class="menuSection">
+			<p title="Reduction to force applied by spring&#10;default: 8">Damping</p>
+			<input type="number" id="damping" name="damping">
+		</div>
+	</div>
+</body>
+<script src="Assets/Scripts/main.js" defer></script>
+<script src="Assets/Scripts/objects.js"></script>
+<script src="Assets/Scripts/utils.js"></script>
+<script src="Assets/Scripts/vector.js"></script>
+<script src="Assets/Scripts/key.js"></script>
+<script src="Assets/Scripts/mouse.js"></script>
+<script src="Assets/Scripts/globals.js"></script>
+<script src="Assets/Scripts/presets.js"></script>
+<script src="Assets/Scripts/storage.js"></script>
+<script src="Assets/Scripts/menu.js"></script>
+</html>
