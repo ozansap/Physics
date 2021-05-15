@@ -19,10 +19,4 @@ class G {
 	static playButtonImg;
 	static canvas;
 	static ctx;
-
-	static togglePause() {
-		G.paused = !G.paused;
-		G.pauseButtonImg.style.display = G.paused ? "none" : "flex";
-		G.playButtonImg.style.display = G.paused ? "flex" : "none";
-	}
 }

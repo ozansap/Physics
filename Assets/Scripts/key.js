@@ -1,6 +1,6 @@
 // ##### REQUIRES #####
 // mouse
-// globals
+// utils
 
 class Key {
 	static down(event) {
@@ -13,7 +13,7 @@ class Key {
 	}
 
 	static Space() {
-		G.togglePause();
+		Utils.togglePause();
 	}
 
 	static KeyQ() {

@@ -17,7 +17,7 @@ class Utils {
 		G.playButtonImg = document.getElementById("playButtonImg");
 		G.pauseButtonImg = document.getElementById("pauseButtonImg");
 
-		document.getElementById("pauseButton").onmousedown = G.togglePause;
+		document.getElementById("pauseButton").onmousedown = Utils.togglePause;
 
 		document.addEventListener('mousedown', Mouse.down);
 		document.addEventListener('mouseup', Mouse.up);
@@ -76,6 +76,12 @@ class Utils {
 				Menu.saveProperty(menu, selectField.name, selectField.value);
 			}
 		}
+	}
+
+	static togglePause() {
+		G.paused = !G.paused;
+		G.pauseButtonImg.style.display = G.paused ? "none" : "flex";
+		G.playButtonImg.style.display = G.paused ? "flex" : "none";
 	}
 }
 
