@@ -3,7 +3,7 @@
 This is a simple physics sandbox made using vanilla HTML, CSS and JS.
 
 The web app is hosted at [physics.ozansap.com](https://physics.ozansap.com). \
-It does not work on mobile
+It does not work on mobile.
 
 ## Features
 - [x] - Circle to circle collisions
